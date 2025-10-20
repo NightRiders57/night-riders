@@ -1,0 +1,9 @@
+title: Night Riders
+description: Sito ufficiale del club Night Riders
+baseurl: "" # to be set if hosted in a subpath
+url: "" # to set to your site URL if you have one
+theme: minima
+markdown: kramdown
+collections:
+  albums:
+    output: true

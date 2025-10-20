@@ -1,0 +1,46 @@
+---
+layout: default
+---
+<div class="hero">
+  <div class="hero-overlay">
+    <h1 class="site-title">Night Riders</h1>
+    <p class="site-sub">Club · Eventi · Foto</p>
+    <div class="hero-buttons">
+      <a class="btn" href="/news.html">News</a>
+      <a class="btn" href="/gallery.html">Gallery</a>
+    </div>
+  </div>
+</div>
+
+<main class="container">
+  <section>
+    <h2>Ultime notizie</h2>
+    <div class="cards">
+      {% for post in site.posts limit:3 %}
+      <article class="card">
+        <img src="{{ post.image | default: '/img/placeholder-news.jpg' }}" alt="{{ post.title }}">
+        <div class="card-body">
+          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <time>{{ post.date | date: "%d %B %Y" }}</time>
+          <p>{{ post.excerpt | strip_html | truncate: 120 }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section>
+    <h2>Album recenti</h2>
+    <div class="cards">
+      {% for album in site.albums limit:3 %}
+      <article class="card">
+        <img src="{{ album.cover | default: '/img/placeholder-album.jpg' }}" alt="{{ album.title }}">
+        <div class="card-body">
+          <h3><a href="{{ album.url }}">{{ album.title }}</a></h3>
+          <p>{{ album.description | truncate: 120 }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
+</main>

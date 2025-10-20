@@ -1,0 +1,31 @@
+backend:
+  name: github
+  repo: "NightRiders57/night-riders" # <--- cambia qui: username/repo
+  branch: main # branch di default
+media_folder: "img/uploads" # Cartella in cui verranno salvate le immagini
+public_folder: "/img/uploads"
+
+site_url: ""
+
+collections:
+  - name: "posts"
+    label: "News"
+    folder: "_posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Featured image (url)", name: "image", widget: "image" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "albums"
+    label: "Albums"
+    folder: "_albums"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Cover image", name: "cover", widget: "image" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Photos", name: "photos", widget: "list", field:
+          { label: "Photo", name: "photo", widget: "image" } }
