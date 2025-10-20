@@ -1,6 +1,0 @@
-title: Night Riders
-theme: minima
-markdown: kramdown
-collections:
-  albums:
-    output: true
