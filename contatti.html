@@ -90,12 +90,31 @@
             <input type="text" name="nome" placeholder="Il tuo nome" required>
             <input type="email" name="email" placeholder="La tua email" required>
             <textarea name="messaggio" placeholder="Scrivi il tuo messaggio..." required></textarea>
-
-            <!-- REDIRECT -->
-            <input type="hidden" name="redirect" value="https://nightriders57.it/contatto_inviato.html">
-            
             <button type="submit">INVIA</button>
+            
         </form>
+
+        <script>
+        document.getElementById("contactForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+            const form = e.target;
+
+            fetch(form.action, {
+                method: form.method,
+                body: new FormData(form)
+            })
+            .then(response => {
+                if (response.ok) {
+                    window.location.href = "https://nightriders57.it/contatto_inviato.html";
+                } else {
+                    window.location.href = "https://nightriders57.it/errore_contatto.html";
+                }
+            })
+            .catch(() => {
+                window.location.href = "https://nightriders57.it/contatto_errore.html";
+            });
+        });
+        </script>
     </div>
 
     <div class="footer">
@@ -104,6 +123,7 @@
     </div>
 </body>
 </html>
+
 
 
 
