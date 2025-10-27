@@ -195,6 +195,15 @@ h3:hover {
   transform: scale(1.05);
 }
 
+/* --- Bottone Iscriviti Ora disabilitato --- */
+.btn-iscriviti.disabilitato {
+  background-color: #555;      /* colore spento */
+  cursor: not-allowed;         /* cursore disattivo */
+  pointer-events: none;        /* disabilita il click */
+  opacity: 0.7;                /* effetto visivo più “off” */
+  text-transform: uppercase;
+}
+
 /* Bottone Acquista Ora */
 .btn-acquista {
   display: inline-block;
