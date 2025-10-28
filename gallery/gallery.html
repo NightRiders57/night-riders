@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Route57 km.2</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <header>
+    <!-- Hero / logo -->
+    <div class="hero">
+      <img src="../img/hero.jpg" alt="Night Riders Hero">
+    </div>
+
+    <!-- Navbar sotto hero -->
+    <nav>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../news/news1.html">News</a></li>
+        <li><a href="album1.html">Gallery</a></li>
+        <li><a href="../shop/shop.html">Shop</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Route57 km.2</h1>
+    <div class="album">
+     
+       <section class="gallery-preview">
+      <h2>Album Eventi</h2>
+      <div class="cards">
+        <article class="card">
+          <img src="img/album1-1.jpg" alt="Foto Night Riders">
+          <div class="card-body">
+            <h3><a href="gallery/album1.html">Route57 km.2</a></h3>
+          </div>
+        </article>
+      </div>
+    </section>
+    </div>
+  </main>
+
+<!-- Lightbox -->
+<div id="lightbox" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);justify-content:center;align-items:center;z-index:9999;">
+  <img id="lightbox-img" src="" style="max-width:90%;max-height:90%;">
+</div>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightbox-img');
+  document.querySelectorAll('.lightbox-link').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      lightboxImg.src = link.href;
+      lightbox.style.display = 'flex';
+    });
+  });
+  lightbox.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    lightboxImg.src = '';
+  });
+</script>
+
+  <footer style="text-align: center; margin-top: 40px; padding: 20px; font-size: 14px; color: #aaa;">
+   Powered by FBD © 2025 NightRiders57 — Tutti i diritti riservati |
+    <a href="/privacy.html" style="color: #ff6600; text-decoration: none;">Privacy Policy</a> |
+    <a href="/termini.html" style="color: #ff6600; text-decoration: none;">Termini d’Uso</a> |
+   <a href="/contatti.html" style="color: #ff6600; text-decoration: none;">Contatti</a>
+</footer>
+</body>
+</html>
