@@ -269,12 +269,12 @@ h3:hover {
 .social-icon img {
   width: 40px;
   height: 40px;
-  filter: invert(60%) sepia(90%) saturate(500%) hue-rotate(10deg) brightness(100%) contrast(90%);
+  filter: invert(100%) brightness(100%) contrast(100%);
 }
 
-.social-icon:hover {
-  transform: scale(1.2);
-  filter: drop-shadow(0 0 8px #ff6600);
+.social-icon:hover img {
+  filter: invert(57%) sepia(93%) saturate(3223%) hue-rotate(3deg) brightness(101%) contrast(103%);
+  transform: scale(1.15);
 }
 
 @media (max-width: 600px) {
