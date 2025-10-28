@@ -252,3 +252,35 @@ h3:hover {
   box-shadow: 0 0 20px #ffaa33, 0 0 40px #ff6600;
   transform: scale(1.05);
 }
+
+/* Social link */
+
+.social-section {
+  text-align: center;
+  margin: 60px 0 20px 0;
+}
+
+.social-icon {
+  display: inline-block;
+  margin: 0 20px;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.social-icon img {
+  width: 40px;
+  height: 40px;
+  filter: invert(60%) sepia(90%) saturate(500%) hue-rotate(10deg) brightness(100%) contrast(90%);
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 8px #ff6600);
+}
+
+@media (max-width: 600px) {
+  .social-icon img {
+    width: 34px;
+    height: 34px;
+    margin: 0 12px;
+  }
+}
