@@ -182,10 +182,10 @@ footer {
 /* --- Effetto neon arancione --- */
 h1, h2, h3, nav ul li a {
   color: #ff6600;
-  text-shadow: 0 0 5px #ff6600,
-               0 0 10px #ff6600,
-               0 0 20px #ff3300,
-               0 0 40px #ff3300;
+  text-shadow: 0 0 2px #ff6600,
+               0 0 5px #ff6600,
+               0 0 10px #ff3300,
+               0 0 20px #ff3300;
   transition: all 0.3s ease;
 }
 
@@ -193,10 +193,10 @@ h1, h2, h3, nav ul li a {
 nav ul li a:hover,
 h2:hover,
 h3:hover {
-  text-shadow: 0 0 10px #ffaa33,
-               0 0 20px #ff6600,
-               0 0 30px #ff3300,
-               0 0 60px #ff3300;
+  text-shadow: 0 0 5px #ffaa33,
+               0 0 10px #ff6600,
+               0 0 15px #ff3300,
+               0 0 30px #ff3300;
   transform: scale(1.03);
 }
 
