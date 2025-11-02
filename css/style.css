@@ -269,11 +269,11 @@ h3:hover {
 .social-icon img {
   width: 40px;
   height: 40px;
-  filter: invert(100%) brightness(100%) contrast(100%);
+  filter: invert(57%) sepia(93%) saturate(3223%) hue-rotate(3deg) brightness(101%) contrast(103%);
 }
 
 .social-icon:hover img {
-  filter: invert(57%) sepia(93%) saturate(3223%) hue-rotate(3deg) brightness(101%) contrast(103%);
+  filter:invert(100%) brightness(100%) contrast(100%);
   transform: scale(1.15);
 }
 
@@ -284,3 +284,13 @@ h3:hover {
     margin: 0 12px;
   }
 }
+
+body {
+  background-image: url('../img/sfondo.jpg');
+  background-size: cover;         /* L'immagine copre tutto lo schermo */
+  background-position: center;    /* Centra l'immagine */
+  background-attachment: fixed;   /* Effetto “parallax” mentre scorri */
+  background-repeat: no-repeat;
+  color: #fff;                    /* Testo leggibile se lo sfondo è scuro */
+}
+
