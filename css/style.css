@@ -314,7 +314,7 @@ body {
   top: 0;
   left: 0;
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
   background-image: url('../img/sfondo.jpg');
   background-size: cover;
   background-position: center;
