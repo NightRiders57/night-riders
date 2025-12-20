@@ -289,8 +289,12 @@ body {
   background-image: url('../img/sfondo.jpg');
   background-size: cover;         /* L'immagine copre tutto lo schermo */
   background-position: center;    /* Centra l'immagine */
-  background-attachment: fixed;   /* Effetto “parallax” mentre scorri */
   background-repeat: no-repeat;
   color: #fff;                    /* Testo leggibile se lo sfondo è scuro */
 }
 
+  @media (min-width: 1200px) {
+    body {
+      background-attachment: fixed; /* Sfondo fisso su schermi grandi */
+    }
+  }
