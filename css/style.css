@@ -285,13 +285,13 @@ h3:hover {
   }
 }
 
-html, body {
+/*html, body {
   height: 100%;
   margin: 0;
   padding: 0;
 }
 
-/*body {
+body {
   background-image: url('../img/sfondo.jpg');
   background-size: cover;         /* L'immagine copre tutto lo schermo 
   background-position: center center;    /* Centra l'immagine 
