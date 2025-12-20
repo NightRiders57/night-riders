@@ -291,17 +291,42 @@ html, body {
   padding: 0;
 }
 
-body {
+/*body {
   background-image: url('../img/sfondo.jpg');
-  background-size: cover;         /* L'immagine copre tutto lo schermo */
-  background-position: center center;    /* Centra l'immagine */
+  background-size: cover;         /* L'immagine copre tutto lo schermo 
+  background-position: center center;    /* Centra l'immagine 
   background-repeat: no-repeat;
-  background-attachment: fixed;   /* Sfondo fisso su schermi grandi */
-  color: #fff;                    /* Testo leggibile se lo sfondo è scuro */
+  background-attachment: fixed;   /* Sfondo fisso su schermi grandi 
+  color: #fff;                    /* Testo leggibile se lo sfondo è scuro 
 }
+
 
   @media (max-width: 600px) {
     body {
-      background-attachment: scroll; /* Sfondo scorre con la pagina */
+      background-attachment: scroll; /* Sfondo scorre con la pagina 
     }
   }
+*/
+
+/* Sfondo fisso dietro tutto il contenuto */
+.bg-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('../img/sfondo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  z-index: -1; /* Dietro tutto il contenuto */
+}
+
+/* Contenuto sopra lo sfondo */
+body {
+  background: transparent;  
+}
+
+html, body {
+  min-height: 100%;
+}
