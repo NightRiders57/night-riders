@@ -330,10 +330,3 @@ body {
 html, body {
   min-height: 100%;
 }
-
-@supports (-webkit-touch-callout: none) {
-  .bg-fixed {
-    position: absolute;
-    height: 100%;
-  }
-}
