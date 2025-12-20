@@ -9,7 +9,7 @@
 /* --- Body --- */
 body {
   background-color: #000; /* nero di base */
-  color: #ff6600; /* testo arancione */
+  color: #f49529; /* testo arancione */
   line-height: 1.6;
 }
 
@@ -17,7 +17,7 @@ body {
 .hero {
   position: relative;
   text-align: center;
-  color: #ff6600; /* arancione */
+  color: #f49529; /* arancione */
 }
 
 .hero img {
@@ -61,7 +61,7 @@ nav ul li {
 }
 
 nav ul li a {
-  color: #ff6600;
+  color: #f49529;
   text-decoration: none;
   font-weight: bold;
   font-size: 1.2em;
@@ -133,7 +133,7 @@ section {
 }
 
 .card-body h3 a {
-  color: #ff6600;
+  color: #f49529;
   text-decoration: none;
 }
 
@@ -175,15 +175,15 @@ footer {
   background-color: #111;
   text-align: center;
   padding: 20px;
-  color: #ff6600;
+  color: #f49529;
   font-weight: bold;
 }
 
 /* --- Effetto neon arancione --- */
 h1, h2, h3, nav ul li a {
-  color: #ff6600;
-  text-shadow: 0 0 2px #ff6600,
-               0 0 5px #ff6600,
+  color: #f49529;
+  text-shadow: 0 0 2px #f49259,
+               0 0 5px #f49529,
                0 0 10px #ff3300,
                0 0 20px #ff3300;
   transition: all 0.3s ease;
@@ -193,8 +193,8 @@ h1, h2, h3, nav ul li a {
 nav ul li a:hover,
 h2:hover,
 h3:hover {
-  text-shadow: 0 0 5px #ffaa33,
-               0 0 10px #ff6600,
+  text-shadow: 0 0 5px #f49259,
+               0 0 10px #f49259,
                0 0 15px #ff3300,
                0 0 30px #ff3300;
   transform: scale(1.03);
@@ -203,7 +203,7 @@ h3:hover {
 /* --- Bottone Iscriviti Ora --- */
 .btn-iscriviti {
   display: inline-block;
-  background-color: #ff6600;
+  background-color: #f49529;
   color: #000;
   font-weight: bold;
   padding: 12px 25px;
@@ -211,14 +211,14 @@ h3:hover {
   text-decoration: none;
   font-size: 1.1em;
   margin-top: 20px;
-  box-shadow: 0 0 10px #ff6600, 0 0 20px #ff3300;
+  box-shadow: 0 0 10px #f49259, 0 0 20px #ff3300;
   transition: all 0.3s ease;
 }
 
 .btn-iscriviti:hover {
   background-color: #000;
-  color: #ff6600;
-  box-shadow: 0 0 20px #ffaa33, 0 0 40px #ff6600;
+  color: #f49529;
+  box-shadow: 0 0 20px #ffaa33, 0 0 40px #f49259;
   transform: scale(1.05);
 }
 
@@ -234,7 +234,7 @@ h3:hover {
 /* Bottone Acquista Ora */
 .btn-acquista {
   display: inline-block;
-  background-color: #ff6600;
+  background-color: #f49529;
   color: #000;
   font-weight: bold;
   padding: 12px 25px;
@@ -242,14 +242,14 @@ h3:hover {
   text-decoration: none;
   font-size: 1.1em;
   margin-top: 15px;
-  box-shadow: 0 0 10px #ff6600, 0 0 20px #ff3300;
+  box-shadow: 0 0 10px #f49259, 0 0 20px #ff3300;
   transition: all 0.3s ease;
 }
 
 .btn-acquista:hover {
   background-color: #000;
-  color: #ff6600;
-  box-shadow: 0 0 20px #ffaa33, 0 0 40px #ff6600;
+  color: #f49529;
+  box-shadow: 0 0 20px #ffaa33, 0 0 40px #f49259;
   transform: scale(1.05);
 }
 
