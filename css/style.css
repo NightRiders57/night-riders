@@ -298,28 +298,30 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;   /* Sfondo fisso su schermi grandi 
   color: #fff;                    /* Testo leggibile se lo sfondo è scuro 
-}
+}*/
 
 
   @media (max-width: 600px) {
-    body {
-      background-attachment: scroll; /* Sfondo scorre con la pagina 
+    .bg-fixed {
+      position: absolute;
+      height: 100%;
     }
   }
-*/
+
 
 /* Sfondo fisso dietro tutto il contenuto */
 .bg-fixed {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
-  height: 100dvh;
+  width: 100%;
+  height: 100vh;
   background-image: url('../img/sfondo.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1; /* Dietro tutto il contenuto */
+  will-change : transform;
 }
 
 /* Contenuto sopra lo sfondo */
@@ -328,5 +330,7 @@ body {
 }
 
 html, body {
+  margin: 0;
+  padding: 0;
   min-height: 100%;
 }
