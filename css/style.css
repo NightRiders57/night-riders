@@ -300,15 +300,6 @@ body {
   color: #fff;                    /* Testo leggibile se lo sfondo è scuro 
 }*/
 
-
-  @media (max-width: 600px) {
-    .bg-fixed {
-      position: absolute;
-      height: 100%;
-    }
-  }
-
-
 /* Sfondo fisso dietro tutto il contenuto */
 .bg-fixed {
   position: fixed;
@@ -321,7 +312,14 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1; /* Dietro tutto il contenuto */
-  will-change : transform;
+}
+
+@media (max-width: 600px) {
+  .bg-fixed {
+    position: absolute;
+    min-height: 100%;
+    height: auto;
+  }
 }
 
 /* Contenuto sopra lo sfondo */
@@ -333,4 +331,5 @@ html, body {
   margin: 0;
   padding: 0;
   min-height: 100%;
+  overflow-x: hidden;
 }
