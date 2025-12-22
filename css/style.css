@@ -312,6 +312,7 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   z-index: -1; /* Dietro tutto il contenuto */
+  will-change: transform;
 }
 
 @media (max-width: 600px) {
