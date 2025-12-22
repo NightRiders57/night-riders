@@ -316,7 +316,7 @@ body {
   will-change: transform;
 }
 
-@media (max-width: 768px) {
+/*@media (max-width: 768px) {
   .bg-fixed {
     position: absolute;
     top: 0;
@@ -328,7 +328,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
   }
-}
+}*/
 
 /* Contenuto sopra lo sfondo */
 body {
