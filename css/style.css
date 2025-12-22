@@ -303,7 +303,7 @@ body {
 /* Sfondo fisso dietro tutto il contenuto */
 .bg-fixed {
   position: fixed;
-  inset: -10vh; /* Estende leggermente oltre i bordi della viewport */
+  inset: 0vh; /* Estende leggermente oltre i bordi della viewport */
   width: 120vw;
   height: 120dvh;
   background-image: url('../img/sfondo.jpg');
