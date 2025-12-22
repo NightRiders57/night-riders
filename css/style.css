@@ -303,11 +303,9 @@ body {
 /* Sfondo fisso dietro tutto il contenuto */
 .bg-fixed {
   position: fixed;
-  inset: 0;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100dvh;
+  inset: -10vh; /* Estende leggermente oltre i bordi della viewport */
+  width: 120vw;
+  height: 120dvh;
   background-image: url('../img/sfondo.jpg');
   background-size: cover;
   background-position: center;
