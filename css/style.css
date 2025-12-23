@@ -182,10 +182,10 @@ footer {
 /* --- Effetto neon arancione --- */
 h1, h2, h3, nav ul li a {
   color: #f49529;
-  text-shadow: 0 0 2px #f49259,
-               0 0 5px #f49529,
-               0 0 10px #ff3300,
-               0 0 20px #ff3300;
+  text-shadow: 0 0 1px #f49259,
+               0 0 3px #f49529,
+               0 0 6px #ff3300,
+               0 0 10px #ff3300;
   transition: all 0.3s ease;
 }
 
