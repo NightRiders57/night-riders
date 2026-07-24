@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Area Riservata - Night Riders</title>
+  <link rel="stylesheet" href="css/style.css">
+  
+  <!-- Carica CryptoJS per il calcolo dell'Hash -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
+
+  <style>
+    .protected-section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      text-align: center;
+    }
+    .login-box {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      border-radius: 8px;
+      margin-top: 20px;
+    }
+    .login-box input[type="password"] {
+      padding: 10px;
+      font-size: 16px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      margin-right: 10px;
+    }
+    .login-box button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #f49529;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .file-list {
+      display: none; /* Nascosto fino a login effettuato */
+      margin-top: 30px;
+    }
+    .file-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.4);
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      border-left: 4px solid #f49529;
+    }
+    .download-btn {
+      color: #f49529;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-fixed"></div>
+  <header>
+    <div class="hero">
+      <img src="img/hero.jpg" alt="Night Riders Hero">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="news/news1.html">News</a></li>
+        <li><a href="gallery/gallery.html">Gallery</a></li>
+        <li><a href="shop/shop.html">Shop</a></li>
+        <li><a href="contatti.html">Contatti</a></li>
+        <li><a href="storia.html">La nostra Storia</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="protected-section">
+      <h2>Area Riservata</h2>
+
+      <!-- Form Login -->
+      <div id="login-form" class="login-box">
+        <p>Inserisci la password per accedere ai documenti riservati:</p>
+        <input type="password" id="password-input" placeholder="Password">
+        <button onclick="checkPassword()">Accedi</button>
+        <p id="error-msg" style="color: #ff4d4d; display: none; margin-top: 10px;">Password errata. Riprova.</p>
+      </div>
+
+      <!-- Elenco File (Visibile solo con password corretta) -->
+      <div id="protected-content" class="file-list">
+        <h3>Documenti e PDF Scaricabili</h3>
+        
+        <div class="file-item">
+          <span>📄 Iscrizioni NovemberMeet2025 (PDF)</span>
+          <a href="docs/Iscrizioni NovemberMeet2025.pdf" class="download-btn" download>Scarica PDF</a>
+        </div>
+
+        <div class="file-item">
+          <span>📄 Iscrizioni Route 57km 3 (PDF)</span>
+          <a href="docs/Iscrizioni Route57km3.pdf" class="download-btn" download>Scarica PDF</a>
+        </div>
+
+        <div class="file-item">
+          <span>📄 Iscrizioni PitLane57 Novembre 2026 (XLSX)</span>
+          <a href="docs/Iscrizioni PitLane57 Novembre 2026.xlsx" class="download-btn" download>Scarica XLSX</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Incolla qui l'Hash generato nel Passaggio 1
+    const passwordHashCorretto = "8cbb5280de8399af0224bf7e715c8621eb0668cfc7ce8d1740d54684d2300144"; 
+
+    function checkPassword() {
+      const inputPass = document.getElementById("password-input").value;
+      const errorMsg = document.getElementById("error-msg");
+      const loginForm = document.getElementById("login-form");
+      const protectedContent = document.getElementById("protected-content");
+
+      // Calcola l'hash della password inserita dall'utente
+      const inputHash = CryptoJS.SHA256(inputPass).toString();
+
+      // Confronta i due Hash
+      if (inputHash === passwordHashCorretto) {
+        loginForm.style.display = "none";
+        protectedContent.style.display = "block";
+      } else {
+        errorMsg.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
