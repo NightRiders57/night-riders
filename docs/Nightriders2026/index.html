@@ -114,7 +114,7 @@
         };
 
         // Chiama la Serverless Function di Netlify
-        const response = await fetch("/.netlify/functions/upload", {
+        const response = await fetch("https://nightriders57.netlify.app/.netlify/functions/upload", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload)
