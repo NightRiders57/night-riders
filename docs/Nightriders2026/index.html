@@ -3,13 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Documenti Riservati - Night Riders</title>
-  <!-- Usa ../../ per risalire di due livelli fino alla cartella css/ root -->
+  <title>Documenti - Night Riders</title>
+  <!-- Torna indietro di due livelli per raggiungere il CSS nella root -->
   <link rel="stylesheet" href="../../css/style.css"> 
   <style>
     .protected-section { max-width: 800px; margin: 40px auto; padding: 20px; text-align: center; }
     .file-item { display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.4); padding: 15px; margin-bottom: 10px; border-radius: 6px; border-left: 4px solid #f49529; }
     .download-btn { color: #f49529; text-decoration: none; font-weight: bold; }
+    
+    /* Stili per il box di upload */
+    .upload-box {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px dashed #f49529;
+      padding: 25px;
+      border-radius: 8px;
+      margin-top: 40px;
+      text-align: left;
+    }
+    .upload-box h3 { color: #f49529; margin-top: 0; }
+    .upload-btn {
+      padding: 10px 20px;
+      background-color: #f49529;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .upload-btn:disabled { background-color: #888; cursor: not-allowed; }
   </style>
 </head>
 <body>
@@ -18,6 +40,7 @@
     <section class="protected-section">
       <h2>Area Riservata - Documenti</h2>
 
+      <!-- LISTA FILE ESISTENTI -->
       <div class="file-list">
         <h3>Iscrizioni Eventi</h3>
         
@@ -43,7 +66,88 @@
           <a href="Permesso polizia locale raduno 19 settembre 2026 AF Petroli.pdf" class="download-btn" download>Scarica PDF</a>
         </div>
       </div>
+
+      <!-- BOX UPLOAD FILE -->
+      <div class="upload-box">
+        <h3>Carica un nuovo file</h3>
+        <p style="font-size: 0.9em; color: #ccc; margin-bottom: 15px;">
+          Seleziona un file PDF o XLSX da aggiungere a questa cartella:
+        </p>
+        
+        <input type="file" id="fileInput" accept=".pdf,.xlsx,.xls,.png,.jpg" style="color: #fff; display: block; margin-bottom: 10px;">
+        <button id="uploadBtn" onclick="uploadViaServerless()" class="upload-btn">Carica Documento</button>
+
+        <p id="statusMsg" style="margin-top: 15px; font-weight: bold;"></p>
+      </div>
+
     </section>
   </main>
+
+  <script>
+    async function uploadViaServerless() {
+      const fileInput = document.getElementById('fileInput');
+      const statusMsg = document.getElementById('statusMsg');
+      const uploadBtn = document.getElementById('uploadBtn');
+
+      if (fileInput.files.length === 0) {
+        statusMsg.style.color = "#ff4d4d";
+        statusMsg.innerText = "Seleziona un file prima di procedere!";
+        return;
+      }
+
+      const file = fileInput.files[0];
+      
+      // Disabilita il pulsante durante il caricamento
+      uploadBtn.disabled = true;
+      statusMsg.style.color = "#f49529";
+      statusMsg.innerText = "Caricamento in corso su GitHub...";
+
+      try {
+        // Converti il file in Base64
+        const base64Content = await convertFileToBase64(file);
+
+        // Prepara il payload per la Netlify Function
+        const payload = {
+          fileName: file.name,
+          fileBase64: base64Content,
+          folder: "docs/Pistoni2026" // Imposta la cartella esatta su GitHub
+        };
+
+        // Chiama la Serverless Function di Netlify
+        const response = await fetch("/.netlify/functions/upload", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          statusMsg.style.color = "#4CAF50";
+          statusMsg.innerText = "File caricato con successo nel repository!";
+          fileInput.value = ""; // Resetta l'input
+        } else {
+          statusMsg.style.color = "#ff4d4d";
+          statusMsg.innerText = "Errore: " + (result.error || "Impossibile caricare il file.");
+        }
+
+      } catch (err) {
+        statusMsg.style.color = "#ff4d4d";
+        statusMsg.innerText = "Errore di connessione: " + err.message;
+      } finally {
+        uploadBtn.disabled = false;
+      }
+    }
+
+    // Funzione helper per convertire il file in stringa Base64 pura
+    function convertFileToBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => resolve(reader.result.split(',')[1]);
+        reader.onerror = error => reject(error);
+      });
+    }
+  </script>
 </body>
 </html>
