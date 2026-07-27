@@ -44,12 +44,12 @@
 
   <script>
     function checkPassword(event) {
-      event.preventDefault(); // Impedisce il ricaricamento della pagina
+      event.preventDefault(); 
       
       const inputPass = document.getElementById("password-input").value.trim();
 
       if (inputPass !== "") {
-        // Variazione: reindirizza alla cartella segreta avente come nome la password inserita!
+        
         window.location.href = "docs/" + inputPass + "/index.html";
       }
     }
