@@ -3,158 +3,337 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Night Riders</title>
+  <title>Night Riders - Automotive Events & Track Days</title>
+
+  <meta name="description" content="Sito ufficiale Night Riders 57: raduni automotive, trackday, gallery fotografiche e merchandise.">
+  <meta name="keywords" content="Night Riders, TrackDay, Raduni Auto, Route 57, PitLane 57, Automotive Events">
+
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .btn-cta-primary, .btn-cta-secondary {
+      transition: transform .2s, background-color .2s, box-shadow .2s;
+    }
+
+    .btn-cta-primary {
+      background-color: #f49529;
+      color: #000000;
+      padding: 10px 20px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      box-shadow: 0 3px 10px rgba(244, 149, 41, 0.4);
+    }
+
+    .btn-cta-primary:hover {
+      background-color: #ffaa42;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(244,149,41,0.5);
+    }
+
+    .btn-cta-secondary {
+      background-color: transparent;
+      color: #ffffff;
+      border: 1.5px solid #ffffff;
+      padding: 9px 18px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+
+    .btn-cta-secondary:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+      .hero-container { height: 35vh; min-height: 240px; }
+      .hero-title { font-size: 1.7rem; }
+      .hero-subtitle { font-size: 0.85rem; margin-bottom: 14px; }
+      .btn-cta-primary, .btn-cta-secondary { padding: 8px 14px; font-size: 0.85rem; }
+    }
+
+    
+
+    /* ---------------- CARDS ---------------- */
+    
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 15px;
+      color: #ddd;
+    }
+
+    .card-body h3 a {
+      color: #f49529;
+      text-decoration: none;
+  }
+
+    /* ---------------- NEWSLETTER (NETLIFY) ---------------- */
+    .newsletter {
+      text-align: center;
+      padding: 50px 20px;
+      background: #0a0a0a;
+      color: #fff;
+      margin-top: 40px;
+    }
+
+    .newsletter h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #f49529;
+    }
+
+    .newsletter p {
+      color: #ccc;
+      font-size: 1rem;
+    }
+
+    .newsletter-form {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .newsletter-form input {
+      padding: 12px 15px;
+      width: 260px;
+      border-radius: 6px;
+      border: none;
+      outline: none;
+      font-size: 1rem;
+    }
+
+    .newsletter-form button {
+      background: #f49529;
+      color: #000;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .2s;
+    }
+
+    .newsletter-form button:hover {
+      background: #ffaa42;
+      transform: translateY(-2px);
+    }
+
+    /* ---------------- FOOTER ---------------- */
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      background: #000;
+      color: #ccc;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #f49529;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #ffaa42;
+    }
+  </style>
 </head>
+
 <body>
-  <div class="bg-fixed"></div>
+<div class="bg-fixed"></div>
   <header>
-    <!-- Hero / logo -->
     <div class="hero">
-      <img src="img/hero.jpg" alt="Night Riders Hero">
+      <img src="img/hero.jpg" alt="Night Riders Hero Banner" class="hero-bg">
+      
     </div>
 
-    <!-- Navbar sotto hero -->
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="news/news1.html">News</a></li>
         <li><a href="gallery/gallery.html">Gallery</a></li>
-        <li><a href="shop/shop.html">Shop</a></li>
+        <!--<li><a href="shop/shop.html">Shop</a></li>-->
         <li><a href="contatti.html">Contatti</a></li>
         <li><a href="storia.html">La nostra Storia</a></li>
         <li><a href="area-riservata.html">Area Riservata</a></li>
       </ul>
     </nav>
+    
+        
+        <div class="cta-bar">
+          <p class="hero-subtitle">Eventi Dinamici • Eventi Statici • Track Days</p>
+          <a href="events/pitlane57.html" class="btn-cta-primary">Prossimo Evento 🏎️</a>
+          <a href="shop/shop.html" class="btn-cta-secondary">Official Shop 🛒</a>
+        </div>
+      
   </header>
 
   <main>
+
+    <!-- NEWS -->
     <section class="news-preview">
       <h2>News</h2>
       <div class="cards">
+
         <article class="card">
-          <img src="img/news3.jpg" alt="Foto Night Riders">
+          <img src="img/news3.jpg" alt="TrackDay Night Riders">
           <div class="card-body">
             <h3><a href="news/news1.html">Evento Online</a></h3>
-            <time>1 Marzo 2026</time>
+            <time datetime="2026-03-01">1 Marzo 2026</time>
             <p>Online il secondo TrackDay marchiato NightRiders</p>
           </div>
         </article>
 
         <article class="card">
-          <img src="img/evento2.jpg" alt="Foto Night Riders">
+          <img src="img/evento2.jpg" alt="Route 57 km 3">
           <div class="card-body">
             <h3><a href="gallery/route57km3.html">Nuove Foto Online</a></h3>
-            <time>28 Giugno 2026</time>
-            <p>Online le foto del primo dinamico del 2026 marchiato NightRiders</p>
+            <time datetime="2026-06-28">28 Giugno 2026</time>
+            <p>Online le foto del primo dinamico del 2026</p>
           </div>
         </article>
+
       </div>
     </section>
 
+    <!-- EVENTI -->
     <section id="upcoming">
-  <h2>Prossimi Eventi</h2>
-  <div class="cards">
+      <h2>Eventi 2026</h2>
+      <div class="cards">
 
-    <div class="card">
-     <a href="events/evento1.html"> 
-      <img src="img/evento1.jpg" alt="Evento 1">
-        </a>
-      <div class="card-body">
-        <h3><a href="events/evento1.html" class="no-underline">Pitlane 57</a></h3>  
-        <time datetime="2026-03-01">1 Marzo 2026</time>
-        <p>Primo evento in pista con turni ed area riservata 🔥</p>
+        <article class="card">
+          <a href="events/evento1.html">
+            <img src="img/evento1.jpg" alt="PitLane 57">
+          </a>
+          <div class="card-body">
+            <h3><a href="events/evento1.html">Pitlane 57</a></h3>
+            <time datetime="2026-03-01">1 Marzo 2026</time>
+            <p>Primo evento in pista con turni ed area riservata 🔥</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <a href="events/evento2.html">
+            <img src="img/evento2.jpg" alt="Route 57 km 3">
+          </a>
+          <div class="card-body">
+            <h3><a href="events/evento2.html">Route 57 km.3</a></h3>
+            <time datetime="2026-06-28">28 Giugno 2026</time>
+            <p>Terzo capitolo del Route 57</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <a href="events/pitlane57.html">
+            <img src="img/evento3.jpg" alt="TrackDay PitLane 57 Novembre">
+          </a>
+          <div class="card-body">
+            <h3><a href="events/pitlane57.html">PitLane 57</a></h3>
+            <time datetime="2026-11-08">8 Novembre 2026</time>
+            <p>Secondo TrackDay Marchiato NightRiders</p>
+          </div>
+        </article>
+
+        <article class="card">
+          <a href="events/evento4.html">
+            <img src="img/evento4.jpg" alt="Nuovo evento Night Riders">
+          </a>
+          <div class="card-body">
+            <h3><a href="events/evento4.html">Coming Soon</a></h3>
+            <time datetime="2026-09">Settembre 2026</time>
+            <p>Restate sintonizzati per scoprire l'evento</p>
+          </div>
+        </article>
+
       </div>
-    </div>
+    </section>
 
-    <div class="card">
-      <a href="events/evento2.html">
-      <img src="img/evento2.jpg" alt="Evento 2">
-        </a>
-      <div class="card-body">
-        <h3><a href="events/evento2.html" class="no-underline">Route 57 km.3</a></h3>
-        <time datetime="2026-06">28 Giugno 2026</time>
-        <p>Terzo capitolo del Route 57</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <a href="events/pitlane57.html">
-      <img src="img/evento3.jpg" alt="Evento 3">
-        </a>
-      <div class="card-body">
-        <h3><a href="events/pitlane57.html" class="no-underline"> PitLane 57</a></h3>
-        <time datetime="2026-09">8 Novembre 2026</time>
-        <p>Secondo TrckDay Marchiato NightRiders</p>
-      </div>
-    </div>
-
-    <div class="card">
-      <a href="events/evento4.html">
-      <img src="img/evento4.jpg" alt="Evento 4">
-        </a>
-      <div class="card-body">
-        <h3><a href="events/evento4.html" class="no-underline"> Coming Soon</a></h3>
-        <time datetime="2026-11">Settembre 2026</time>
-        <p>Restate sintonizzati per scoprire l'evento</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-    
+    <!-- GALLERY -->
     <section class="gallery-preview">
       <h2>Album Eventi</h2>
       <div class="cards">
+
         <article class="card">
-          <img src="img/album1-1.jpg" alt="Foto Night Riders">
+          <img src="img/album1-1.jpg" alt="Route 57 km 2">
           <div class="card-body">
             <h3><a href="gallery/album1.html">Route 57 km.2</a></h3>
           </div>
         </article>
-        
+
         <article class="card">
-          <img src="img/album2-2.jpg" alt="Foto Night Riders">
+          <img src="img/album2-2.jpg" alt="November Meet">
           <div class="card-body">
             <h3><a href="gallery/album2.html">November Meet</a></h3>
           </div>
         </article>
-      
+
         <article class="card">
-          <img src="img/album3-3.jpg" alt="Foto Night Riders">
+          <img src="img/album3-3.jpg" alt="PitLane 57">
           <div class="card-body">
             <h3><a href="gallery/album3.html">PitLane 57</a></h3>
           </div>
         </article>
 
         <article class="card">
-          <img src="img/evento2.jpg" alt="Foto Night Riders">
+          <img src="img/evento2.jpg" alt="Route 57 km 3">
           <div class="card-body">
             <h3><a href="gallery/route57km3.html">Route 57 km.3</a></h3>
           </div>
         </article>
+
       </div>
     </section>
+
+    <!-- NEWSLETTER NETLIFY -->
+    <section class="newsletter">
+      <h2>Rimani Aggiornato</h2>
+      <p>Inserisci la tua email o numero per ricevere news e nuovi eventi Night Riders, o per eventuali collaborazioni.</p>
+
+      <form name="newsletter" method="POST" data-netlify="true" action="/success.html" class="newsletter-form">
+        <input type="text" name="contact" placeholder="Email o Numero" required>
+        <button type="submit">Iscriviti</button>
+      </form>
+    </section>
+
   </main>
 
-<div class="social-section">
-  <a href="https://www.instagram.com/night_riders_57?igsh=OXp2aTQ2NDh0NWpo" target="_blank" class="social-icon">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram">
-  </a>
-  <a href="https://www.facebook.com/share/1FAz1Zb6Dq/?mibextid=wwXIfr" target="_blank" class="social-icon">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook">
-  </a>
-  <a href="https://www.tiktok.com/@night_riders_57?_t=ZN-90vIR6ppgJy&_r=1" target="_blank" class="social-icon">
-    <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok">
-  </a>
-</div>
+  <footer>
+    <div class="social-section">
+      <a href="https://www.instagram.com/night_riders_57" target="_blank" class="social-icon">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/instagram.svg" alt="Instagram Night Riders">
+      </a>
+      <a href="https://www.facebook.com/share/1FAz1Zb6Dq" target="_blank" class="social-icon">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/facebook.svg" alt="Facebook Night Riders">
+      </a>
+      <a href="https://www.tiktok.com/@night_riders_57" target="_blank" class="social-icon">
+        <img src="https://cdn.jsdelivr.net/gh/simple-icons/simple-icons/icons/tiktok.svg" alt="TikTok Night Riders">
+      </a>
+    </div>
 
- <footer style="text-align: center; margin-top: 40px; padding: 20px; font-size: 14px; color: #aaa;">
-   Powered by FBD © 2025 NightRiders57 — Tutti i diritti riservati |
-    <a href="/privacy.html" style="color: #f49529; text-decoration: none;">Privacy Policy</a> |
-    <a href="/termini.html" style="color: #f49529; text-decoration: none;">Termini d’Uso</a> |
-   <a href="/contatti.html" style="color: #f49529; text-decoration: none;">Contatti</a>
-</footer>
+    <p style="margin-top: 15px;">
+      Powered by FBD © 2025 NightRiders57 — Tutti i diritti riservati |
+      <a href="/privacy.html">Privacy Policy</a> |
+      <a href="/termini.html">Termini d'Uso</a> |
+      <a href="/contatti.html">Contatti</a>
+    </p>
+  </footer>
+
 </body>
 </html>
